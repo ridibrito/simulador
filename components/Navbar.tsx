@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import ThemeToggle from './ThemeToggle'
 
 export default function Navbar() {
   return (
     <>
-      <div className="flex items-center bg-white dark:bg-gray-800 justify-between p-5 shadow">
+      <div className="bg-white dark:bg-gray-800 p-5 shadow">
+        <div className='flex items-center justify-between max-w-7xl mx-auto'>
         <div className="flex">
           <Link href="/">
             <Image
@@ -17,7 +17,6 @@ export default function Navbar() {
             />
           </Link>
         </div>
-        <ThemeToggle />
         <div className="flex gap-2">
           <Image
             src="/foto capa.png"
@@ -35,6 +34,7 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
+       </div>
       </div>
     </>
   )

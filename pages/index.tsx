@@ -1,6 +1,7 @@
-import { SourceMap } from 'module'
 import type { NextPage } from 'next'
 import React, { useState } from 'react'
+import Footer from '../components/Footer'
+import List from '../components/List'
 import Navbar from '../components/Navbar'
 import SelectAbrangencia from '../components/Selects/SelectAbrangencia'
 import SelectAcomodacao from '../components/Selects/SelectAcomodacao'
@@ -43,7 +44,9 @@ const Home: NextPage = () => {
   }
   const handleOpenMinus3 = () => {
     return setMinus3(true)
-  }
+  } 
+
+
 
 const [faixa, setfaixa] = useState('')
 
@@ -52,7 +55,7 @@ const [faixa, setfaixa] = useState('')
     <>
       <div className="bg-gray-100 dark:bg-gray-600">
         <Navbar />
-        <section>
+        <section className='mx-3'>
         <div className="flex items-center bg-white dark:bg-gray-800 mt-4 mx-auto max-w-7xl rounded p-3 shadow">
         <h2 className="text-lg font-semibold text-gray-700">Nome do lead</h2>
         <input type="text" className='border h-8 rounded w-full'/>
@@ -79,6 +82,8 @@ const [faixa, setfaixa] = useState('')
                   width="16"
                   height="14"
                   viewBox="0 0 24 24"
+                  className="cursor-pointer"
+
                 >
                   <path d="M24 9h-9v-9h-6v9h-9v6h9v9h6v-9h9z" />
                 </svg>
@@ -127,6 +132,8 @@ const [faixa, setfaixa] = useState('')
                   width="16"
                   height="14"
                   viewBox="0 0 24 24"
+                  className="cursor-pointer"
+
                 >
                   <path d="M24 9h-9v-9h-6v9h-9v6h9v9h6v-9h9z" />
                 </svg>
@@ -174,6 +181,8 @@ const [faixa, setfaixa] = useState('')
                   width="16"
                   height="14"
                   viewBox="0 0 24 24"
+                  className="cursor-pointer"
+
                 >
                   <path d="M24 9h-9v-9h-6v9h-9v6h9v9h6v-9h9z" />
                 </svg>
@@ -229,6 +238,8 @@ const [faixa, setfaixa] = useState('')
                   width="16"
                   height="14"
                   viewBox="0 0 24 24"
+                  className="cursor-pointer"
+
                 >
                   <path d="M24 9h-9v-9h-6v9h-9v6h9v9h6v-9h9z" />
                 </svg>
@@ -236,7 +247,7 @@ const [faixa, setfaixa] = useState('')
             </div>
 
             <div
-              className="xl:flex grid grid-cols-3 gap-2"
+              className="grid-cols-3 sm:grid-cols-5 lg:grid-cols-11 gap-2"
               style={{ display: minus3 ? 'grid' : 'none' }}
             >
               <div className="w-full max-w-7xl mt-4 sm:mt-2 text-center">
@@ -362,8 +373,26 @@ const [faixa, setfaixa] = useState('')
                 />
               </div>
             </div>
+            
+          </div>
+          <div className="flex items-center bg-white dark:bg-gray-800 mt-4 mx-auto max-w-7xl rounded p-3 shadow gap-3 justify-center mb-5">
+          <button className="bg-yellow-500 hover:bg-yellow-600 rounded px-8 py-3 text-white font-semibold">Limpar</button>
+          <button className="bg-sky-500 hover:bg-sky-600 rounded px-8 py-3 text-white font-semibold">Buscar</button>
+        </div>
+        </section>
+
+        <section className='block mx-auto max-w-7xl justify-center'>
+          <div className=' flex items-center justify-between bg-gray-300 rounded p-3 mb-2 px-4 '>
+          <h2 className='text-gray-700 font-bold'>Selecione uma operadora</h2>
+          <h4 className='text-gray-700 font-bold text-sm'>Planos encontrados:qts planos</h4>
+          </div>
+          <List />
+          <List />
+          <div className='text-center flex justify-center my-5'>
+          <button className='bg-sky-500 hover:bg-sky-600 text-white font-semibold px-8 py-3 rounded  w-80 mx-2'>Gerar cotação</button>
           </div>
         </section>
+        <Footer />
       </div>
     </>
   )
