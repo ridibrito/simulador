@@ -14,3 +14,57 @@ model User {
   name    String?  @db.VarChar(255)
   email   String   @unique @db.VarChar(255)
 }
+
+model Uf {
+  id      Int      @id @default(autoincrement())
+  name    String?  @db.VarChar(255)
+}
+
+model TipoProduto {
+  id      Int      @id @default(autoincrement())
+  name    String?  @db.VarChar(255)
+}
+
+model TipoPlano {
+  id      Int      @id @default(autoincrement())
+  name    String?  @db.VarChar(255)
+}
+model Administradora {
+  id      Int      @id @default(autoincrement())
+  name    String?  @db.VarChar(255)
+}
+
+model Entidade {
+  id      Int      @id @default(autoincrement())
+  name    String?  @db.VarChar(255)
+}
+
+model Profissao {
+  id      Int      @id @default(autoincrement())
+  name    String?  @db.VarChar(255)
+}
+
+model Acomodacao {
+  id      Int      @id @default(autoincrement())
+  name    String?  @db.VarChar(255)
+}
+
+model Abrangencia {
+  id      Int      @id @default(autoincrement())
+  name    String?  @db.VarChar(255)
+}
+
+model Coparticipacao {
+  id      Int      @id @default(autoincrement())
+  name    String?  @db.VarChar(255)
+}
+
+model Reembolso {
+  id      Int      @id @default(autoincrement())
+  name    String?  @db.VarChar(255)
+}
+
+model Planos{
+  id      Int      @id @default(autoincrement())
+  name    String?  @db.VarChar(255)
+}
