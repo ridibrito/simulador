@@ -2,7 +2,6 @@ import React from 'react'
 import Select from 'react-select'
 
 
-
 const options = [
   { value: 'Nacional', label: 'Nacional' },
   { value: 'Regional', label: 'Regional' },
@@ -10,6 +9,7 @@ const options = [
 ]
 
 export default function SelectAbrangencia() {
+
   return(
   <Select 
   options={options} 
