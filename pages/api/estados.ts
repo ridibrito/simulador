@@ -8,10 +8,10 @@ export default async function handler(req:NextApiRequest , res:NextApiResponse) 
 
     if(method === 'GET') {
 
-       const tipoPlano = await prisma.tipoPlano.findMany()
+       const estados = await prisma.estados.findMany()
 
        return res.status(200).json({
-        data: tipoPlano,
+        data: estados,
     
     })
 }

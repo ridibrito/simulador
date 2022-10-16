@@ -6,13 +6,13 @@ import Navbar from '../components/Navbar'
 import SelectAbrangencia from '../components/Selects/SelectAbrangencia'
 import SelectAcomodacao from '../components/Selects/SelectAcomodacao'
 import SelectAdm from '../components/Selects/SelectAdm'
-import SelectCidades from '../components/Selects/SelectCidades'
 import SelectCoparticipacao from '../components/Selects/SelectCoparticipacao'
 import SelectEntidade from '../components/Selects/SelectEntidade'
 import SelectProfissao from '../components/Selects/SelectProfissao'
 import SelectReembolso from '../components/Selects/SelectReembolso'
 import SelectTipoPlano from '../components/Selects/SelectTipoPlano.'
 import SelectTipoProduto from '../components/Selects/SelectTipoProduto'
+import SelectEstados from '../components/Selects/SelectEstados'
 
 const Home: NextPage = () => {
   const [minus, setMinus] = useState(true)
@@ -45,7 +45,6 @@ const Home: NextPage = () => {
   const handleOpenMinus3 = () => {
     return setMinus3(true)
   } 
-
 
 
 const [faixa, setfaixa] = useState('')
@@ -96,7 +95,7 @@ const [faixa, setfaixa] = useState('')
             >
               <div className="sm:w-1/3"style={{ display: minus ? 'block' : 'none' }}>
                 <label>UF</label>
-                <SelectCidades />
+                <SelectEstados />
               </div>
               <div className="sm:w-1/3" style={{ display: minus ? 'block' : 'none' }}>
                 <label>Tipo de Produto</label>

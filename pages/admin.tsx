@@ -9,7 +9,7 @@ export default function Admin() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
     const onSubmit: SubmitHandler<Inputs> = async(inputs) => {
         
-        const data = await fetch('/api/tipoPlano',{
+        const data = await fetch('/api/abrangencia',{
             method:'POST',
             body: JSON.stringify(inputs),
             headers:{

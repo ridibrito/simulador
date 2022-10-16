@@ -1,20 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
 
-
-
-const options = [
-  { value: 'Individual', label: 'Individual' },
-  { value: 'Adesão', label: 'Adesão' },
-  { value: 'PME', label: 'PME' },
-  { value: 'Familiar', label: 'Familiar' }
-]
+interface ITipo {
+  id: string
+  name: string
+}
 
 export default function SelectTipoPlano() {
-  return(
-  <Select 
-  options={options}
-  placeholder='Tipo de Plano'
+  const [tipos, setTipos] = useState<ITipo[]>([])
 
-  />
- )}
+  const tipoOptions = tipos.map((tipo) => ({
+    value: tipo.id,
+    label: tipo.name,
+  }))
+
+  useEffect(() => {
+    fetch('/api/tipoPlano')
+    .then(res => res.json())
+    .then(({ data }) => setTipos(data))
+  }, [])
+  return <Select options={tipoOptions} placeholder="Tipo de Plano" />
+}
