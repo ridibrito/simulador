@@ -8,25 +8,14 @@ export default async function handler(req:NextApiRequest , res:NextApiResponse) 
 
     if(method === 'GET') {
 
-       const acomodacao = await prisma.acomodacao.findMany()
+       const administradora = await prisma.administradora.findMany()
 
        return res.status(200).json({
-        data: acomodacao,
+        data: administradora,
     
     })
-}else if(method === 'POST') {
-    const { name } =req.body
-
-    const acomodacao = await prisma.acomodacao.create({ 
-        data:{
-            name,
-        }
-       
-        })
-        return res.status(201).json({
-            data: acomodacao,
-    })
+}
 
    return res.status(404).json({message: "Rota inexistente"})
 
-}}
+}

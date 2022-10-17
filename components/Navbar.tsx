@@ -10,10 +10,10 @@ export default function Navbar() {
         <div className="flex">
           <Link href="/">
             <Image
-              src="/corusslogo.png"
+              src="/logo.png"
               alt="logo coruss"
-              width="140"
-              height="30"
+              width="180"
+              height="40"
               className="cursor-pointer"
             />
           </Link>

@@ -13,35 +13,81 @@ model User {
   id      Int      @id @default(autoincrement())
   name    String?  @db.VarChar(255)
   email   String   @unique @db.VarChar(255)
+  image   String?
+  cotacao Cotacao[] 
+  cotacaoId Int
+}
+
+model Cotacao {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  user User @relation(fields: [userId], references: [id])
+  userId Int
+  estado Estados @relation(fields: [estadosId], references: [id])
+  estadosId Int
+  tipoProduto TipoProduto @relation(fields: [tipoProdutoId], references: [id])
+  tipoProdutoId Int
+  tipoPlano TipoPlano @relation(fields: [tipoPlanoId], references: [id])
+  tipoPlanoId Int
+  operadora Operadora @relation(fields: [operadoraId], references: [id])
+  operadoraId Int
+  administradora Administradora @relation(fields: [administradoraId], references: [id])
+  administradoraId Int
 }
 
 model Estados {
   id      Int      @id @default(autoincrement())
   name    String?  @db.VarChar(255)
+  cotacao Cotacao[]
 }
 
 model TipoProduto {
   id      Int      @id @default(autoincrement())
   name    String?  @db.VarChar(255)
+  cotacao Cotacao[]
 }
 
 model TipoPlano {
   id      Int      @id @default(autoincrement())
   name    String?  @db.VarChar(255)
+  cotacao Cotacao[]
+
 }
 model Administradora {
   id      Int      @id @default(autoincrement())
   name    String?  @db.VarChar(255)
+  image   String?
+  plano Plano[] 
+  cotacao Cotacao[]
+  cotacaoId Int
+  entidade Entidade[] 
+  entidadeId Int
+  operadora Operadora[]
+  profissao Profissao[] 
+  profissaoId Int
 }
+model Operadora {
+  id      Int      @id @default(autoincrement())
+  name    String?  @db.VarChar(255)
+  image   String?
+  plano Plano[] 
+  cotacao Cotacao[]
+  cotacaoId Int
+  administradora Administradora[]
 
+}
 model Entidade {
   id      Int      @id @default(autoincrement())
   name    String?  @db.VarChar(255)
+  administradora Administradora[]
+  profissao Profissao[]
 }
 
 model Profissao {
   id      Int      @id @default(autoincrement())
   name    String?  @db.VarChar(255)
+  administradora Administradora[]
+  entidade Entidade[]
 }
 
 model Acomodacao {
@@ -64,7 +110,14 @@ model Reembolso {
   name    String?  @db.VarChar(255)
 }
 
-model Planos{
+model Plano{
   id      Int      @id @default(autoincrement())
   name    String?  @db.VarChar(255)
+  administradora Administradora @relation(fields: [administradoraId], references: [id])
+  administradoraId Int
+  operadora Operadora @relation(fields: [operadoraId], references: [id])
+  operadoraId Int
+  description String
+  value Int
+
 }

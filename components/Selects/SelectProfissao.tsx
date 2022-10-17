@@ -1,16 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
 
+interface IProfissao{
+  id: string
+  name: string
+}
 
-
-const options = [
-  { value: 'Profissional Liberal', label: 'Profissional Liberal' },
-  { value: 'Servidor Público', label: 'Servidor Público' },
-  { value: 'Estudante', label: 'Estudante' },
-  { value: 'Comerciário', label: 'Comerciário' }
-]
 
 export default function SelectProfissao() {
+  const [profissaos, setProfissaos] = useState<IProfissao[]>([])
+
+  const options = profissaos.map((profissao) =>({
+    valeu: profissao.id,
+    label: profissao.name
+  }))
+
+useEffect(()=> {
+  fetch('/api/profissao').then(res => res.json()).then(({ data })=> setProfissaos(data))
+} , [])
+
   return(
   <Select 
   options={options}

@@ -13,7 +13,7 @@ export default function List() {
             <div className="flex items-center justify-around sm:w-1/2 p-3">
             <input type='checkbox' className="w-4 h-4"/>
             <Image src="/amil.png" alt="logo operadora" width="60" height="60" className="rounded-full"/>
-            <h2 className="bg-gray-200 sm:p-8 p-3 -mr-3 text-sm font-semibold">Qualicorp</h2>
+            <Image src="/allcare.jpeg" alt="logo operadora" width="60" height="60" className="rounded-full"/>
             </div>
             <div className="block mt-1">
             <h2 className="top-0 font-bold pl-3">ABRACEM</h2>

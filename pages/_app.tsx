@@ -13,7 +13,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           href="https: //fonts.googleapis.com/css2? family= Inter:wght@300;400;500;600;700;800;900 & display=swap"
           rel="stylesheet"
         />
-      </Head>
+       <link rel="shortcut icon" href="/icon coruss svg.svg"/>
+        </Head>
       <ThemeProvider attribute="class">
         <Component {...pageProps} />
       </ThemeProvider>

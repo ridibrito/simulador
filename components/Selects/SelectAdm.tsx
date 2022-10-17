@@ -1,16 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
 
-
-
-const options = [
-  { value: 'Qualicorp', label: 'Qualicorp' },
-  { value: 'Allcare', label: 'Allcare' },
-  { value: 'Affix', label: 'Affix' },
-  { value: 'Grupo Elo', label: 'Grupo Elo' }
-]
+interface IAdm {
+  id: string
+  name:string
+}
 
 export default function SelectAdm() {
+  const [adms, setAdms] = useState<IAdm[]>([])
+
+  const options = adms.map(adm => ({
+    value: adm.id,
+    label: adm.name
+  }))
+  
+useEffect(()=> {
+  fetch('/api/administradora')
+  .then(res => res.json())
+  .then(({ data }) => setAdms(data))
+},[])
+
   return(
   <Select 
   options={options}

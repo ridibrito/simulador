@@ -48,6 +48,7 @@ const Home: NextPage = () => {
 
 
 const [faixa, setfaixa] = useState('')
+const [nomeLead, setNomeLead] = useState('')
 
 
   return (
@@ -57,7 +58,7 @@ const [faixa, setfaixa] = useState('')
         <section className='mx-3'>
         <div className="flex items-center bg-white dark:bg-gray-800 mt-4 mx-auto max-w-7xl rounded p-3 shadow">
         <h2 className="text-lg font-semibold text-gray-700">Nome do lead</h2>
-        <input type="text" className='border h-8 rounded w-full'/>
+        <input type="text" className='border h-8 rounded w-full pl-2' onChange={(e)=> setNomeLead(e.target.value)}/>
 
         </div>
           <div className=" bg-white dark:bg-gray-800 mt-4 mx-auto max-w-7xl rounded px-3 shadow">
@@ -108,6 +109,7 @@ const [faixa, setfaixa] = useState('')
             </div>
           </div>
 
+                
           <div className=" bg-white dark:bg-gray-800 mt-4 mx-auto max-w-7xl rounded px-3 shadow">
             <div className="flex items-center justify-between p-3 border-b ">
               <h2 className="text-xl font-semibold text-gray-700">
