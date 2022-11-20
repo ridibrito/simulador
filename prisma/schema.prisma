@@ -90,26 +90,6 @@ model Profissao {
   entidade Entidade[]
 }
 
-model Acomodacao {
-  id      Int      @id @default(autoincrement())
-  name    String?  @db.VarChar(255)
-}
-
-model Abrangencia {
-  id      Int      @id @default(autoincrement())
-  name    String?  @db.VarChar(255)
-}
-
-model Coparticipacao {
-  id      Int      @id @default(autoincrement())
-  name    String?  @db.VarChar(255)
-}
-
-model Reembolso {
-  id      Int      @id @default(autoincrement())
-  name    String?  @db.VarChar(255)
-}
-
 model Plano{
   id      Int      @id @default(autoincrement())
   name    String?  @db.VarChar(255)
